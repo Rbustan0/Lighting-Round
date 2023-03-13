@@ -1,0 +1,53 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+header #time {
+    text-align: right;
+}
+
+header #view {
+    text-align: left;
+}
+
+body {
+    background-color:#C9BEB9;
+    color: #8B4513;
+    font-family: 'Open Sans', sans-serif, 'Palatino', 'Garamond';
+    font-size: 16px;
+    text-align: center;
+    max-width: 100%;
+}
+
+
+ul{
+    list-style: none;
+}
+
+button {
+    background-color: #5D4037;
+    color: #F5DEB3;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+}
+
+#quiz-Portion ul li button {
+    margin-bottom: 10px;
+}
+
+
+#score-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid #9C6644;
+}

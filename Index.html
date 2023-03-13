@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "Assets/Style.css">
+    <title>Web Development Quiz</title>
+</head>
+
+
+<body>
+
+<!-- Top portion of page, does not go away until time is up -->
+
+    <header>
+
+        <p id = "view"> View Highscore</p>
+        <p id = "time">Time: </p>
+
+    </header>
+
+    <!-- Start Page (Each other section is hidden) -->
+
+    <main>
+        <h1>Web Development Quiz</h1>
+        <p> Explain rules here.</p>
+        <button id="start"> Start</button>
+
+    </main>
+
+
+    <!-- Quiz Section  (Presents four buttons + Questions) -->
+
+    <section id="quiz-Portion">
+
+        <h2 id="question-Title"> Sample Question</h2>
+        <ul>
+            <li><button id="answer1">Sample 1</button></li>
+            <li><button id="answer2">Sample 2</button></li>
+            <li><button id="answer3">Sample 3</button></li>
+            <li><button id="answer4">Sample 4</button></li>
+        </ul>
+
+        <p id="rightwrong" hidden><i> Wrong!</i></p>
+
+
+    </section>
+
+    <!-- Takes Highscore) -->
+    <section id="take-score">
+
+        <!-- Finished Quiz -->
+        <h2 id="quiz finished"> Quiz Finished!</h2>
+
+        <!-- Para tells you your score -->
+        <p id=score> Your score is </p>
+
+        <!-- Input type text -->
+        <label for="initial">Enter your first and last initial:</label>
+        <input type="text" id="initial" name="initial">
+        <button id="submit">submit</button>
+
+    </section>
+
+    <!-- Presents Score (need to create table that populates local data) -->
+    <!-- REMEMBER TO RUN OFF TIMER AND VIEW HIGHSCORES. -->
+    <section id="score-data">
+        <table id = "score-table">
+            <thead id = "score-table-head">
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JD</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>JS</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>
