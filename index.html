@@ -25,9 +25,9 @@
 
     <!-- Start Page (Each other section is hidden) -->
 
-    <main>
+    <main class = 'visible'>
         <h1>Web Development Quiz</h1>
-        <p> Explain rules here.</p>
+        <p> Try to answer the following questions within the time limit.  Wrong answers will subtract 10 seconds from your score. The highest score is determined by how many seconds left.</p>
         <button id="start"> Start</button>
 
     </main>
@@ -35,23 +35,24 @@
 
     <!-- Quiz Section  (Presents four buttons + Questions) -->
 
-    <section id="quiz-Portion">
+    <section id="quiz-Portion" class = 'hidden'>
 
         <h2 id="question-Title"> Sample Question</h2>
         <ul>
-            <li><button id="answer1">Sample 1</button></li>
-            <li><button id="answer2">Sample 2</button></li>
-            <li><button id="answer3">Sample 3</button></li>
-            <li><button id="answer4">Sample 4</button></li>
+            <li><button id="answer1" class = "incorrect">Sample 1</button></li>
+            <li><button id="answer2" class = "incorrect">Sample 2</button></li>
+            <li><button id="answer3" class = "incorrect">Sample 3</button></li>
+            <li><button id="answer4" class = "incorrect">Sample 4</button></li>
         </ul>
 
-        <p id="rightwrong" hidden><i> Wrong!</i></p>
+        <p  class = 'hidden' id = 'rightwrong'><i> Wrong!</i></p>
+        <p  class = 'hidden' id = 'rightwrong'><i> Right!</i></p>
 
 
     </section>
 
     <!-- Takes Highscore) -->
-    <section id="take-score">
+    <section id="take-score" class = 'hidden'>
 
         <!-- Finished Quiz -->
         <h2 id="quiz finished"> Quiz Finished!</h2>
@@ -68,7 +69,8 @@
 
     <!-- Presents Score (need to create table that populates local data) -->
     <!-- REMEMBER TO RUN OFF TIMER AND VIEW HIGHSCORES. -->
-    <section id="score-data">
+    
+    <section id="score-data" class = 'hidden'>
         <table id = "score-table">
             <thead id = "score-table-head">
                 <tr>
@@ -88,6 +90,9 @@
             </tbody>
         </table>
     </section>
+
+<!-- Linking to Javascript -->
+<script src = './assets/script.js'></script>
 
 </body>
 

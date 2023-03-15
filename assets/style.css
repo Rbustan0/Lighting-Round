@@ -1,9 +1,11 @@
-header{
+/* To move verything in the right space on top */
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
 }
+
 header #time {
     text-align: right;
 }
@@ -12,8 +14,10 @@ header #view {
     text-align: left;
 }
 
+/* Stylized basic settings googled some themes that work with the background I wanted */
+
 body {
-    background-color:#C9BEB9;
+    background-color: #C9BEB9;
     color: #8B4513;
     font-family: 'Open Sans', sans-serif, 'Palatino', 'Garamond';
     font-size: 16px;
@@ -21,8 +25,32 @@ body {
     max-width: 100%;
 }
 
+main p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    margin: 50px auto;
+    max-width: 600px;
+    line-height: 1.5;
+}
 
-ul{
+#start{
+    width: 250px;
+}
+
+/* Display to be changed with Javascript */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Mostly elements for the quiz and begginning part of the site */
+ul {
     list-style: none;
 }
 
@@ -35,15 +63,40 @@ button {
     font-size: 16px;
 }
 
+button:hover {
+    background-color: #F5DEB3;
+    color: #5D4037;
+}
+
+
 #quiz-Portion ul li button {
     margin-bottom: 10px;
 }
 
+/* Last section of the site */
+
+
+/* Made special parameters for this one because i specifically want display: flex */
+
+#score-data .hidden {
+    display: none;
+}
+
+#score-data .visible {
+    display: flex;
+}
+
 
 #score-data {
-    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#score-table-head th {
+    background-color: #9C6644;
+    color: #FFF;
+    padding: 10px;
+    font-size: 16px;
 }
 
 table,
