@@ -288,17 +288,9 @@ function displayHighscore() {
 function deleteHighscore() {
 
     var tbody = document.getElementById('populate'); //table to be populated
-    var storedString = localStorage.getItem(scores);
-    for (var i = 0; i < storedString.length; i++) {
-        var tr = document.createElement('tr');
-        var tdName = document.createElement('td');
-        var tdScore = document.createElement('td');
-        tdName.innerText = localStorage[i].name;
-        tdScore.innerText = localStorage[i].score;
-        tr.removeChild(tdName);
-        tr.removeChild(tdScore);
-        tbody.removeChild(tr);
-    }  
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
 }
 
 
@@ -311,15 +303,10 @@ startButton.addEventListener("click", startQuiz);
 
 
 const scoreTable = document.getElementById('score-table');
-
-
-
-
-
 const reset = document.getElementById('reset-score');
 reset.addEventListener("click", function () {
-   
-})
+   deleteHighscore();
+});
 
 
 
