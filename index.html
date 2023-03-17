@@ -16,10 +16,10 @@
 
 <!-- Top portion of page, does not go away until time is up -->
 
-    <header>
+    <header class = 'visible'>
 
         <p id = "view"> View Highscore</p>
-        <p id = "time">Time: </p>
+        <p id = "time"></p>
 
     </header>
 
@@ -57,8 +57,8 @@
         <!-- Finished Quiz -->
         <h2 id="quiz finished"> Quiz Finished!</h2>
 
-        <!-- Para tells you your score -->
-        <p id=score> Your score is </p>
+        <!-- Para tells you your score and populates in Javascript -->
+        <p id=score></p>
 
         <!-- Input type text -->
         <label for="initial">Enter your first and last initial:</label>
@@ -78,17 +78,15 @@
                     <th>Score</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>JD</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>JS</td>
-                    <td>90</td>
-                </tr>
+            <tbody id = 'populate'>
+                <!-- Will dynamically add rows here with JSON -->
             </tbody>
         </table>
+        <div id = 'score-buttons'>
+            <button id = 'reset-score'>Reset Score</button>
+            <button id = 'retake-quiz'>Retake Quiz</button>
+        </div>
+        
     </section>
 
 <!-- Linking to Javascript -->

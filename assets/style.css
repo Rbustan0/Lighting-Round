@@ -49,6 +49,8 @@ main p {
     display: block;
 }
 
+
+
 /* Mostly elements for the quiz and begginning part of the site */
 ul {
     list-style: none;
@@ -73,25 +75,6 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Last section of the site */
-
-
-/* Made special parameters for this one because i specifically want display: flex */
-
-#score-data .hidden {
-    display: none;
-}
-
-#score-data .visible {
-    display: flex;
-}
-
-
-#score-data {
-    justify-content: center;
-    align-items: center;
-}
-
 #score-table-head th {
     background-color: #9C6644;
     color: #FFF;
@@ -99,8 +82,21 @@ button:hover {
     font-size: 16px;
 }
 
-table,
+table{
+    display: inline;
+}
+
+
 th,
 td {
     border: 1px solid #9C6644;
+}
+#score-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#score-buttons button {
+    margin: 0 10px;
 }
