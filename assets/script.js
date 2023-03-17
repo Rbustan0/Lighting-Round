@@ -306,6 +306,7 @@ const scoreTable = document.getElementById('score-table');
 const reset = document.getElementById('reset-score');
 reset.addEventListener("click", function () {
    deleteHighscore();
+   localStorage.removeItem('scores');
 });
 
 
