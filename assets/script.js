@@ -19,12 +19,12 @@ var questions = [{
     correctAnswer: 2
 },
 {
-    question: "What data type does not exist in JavaScript",
+    question: "What data type does not exist in JavaScript?",
     answers: ["boolean", "dictionaries", "numbers", "arrays"],
     correctAnswer: 1
 },
 {
-    question: "What does isNaN() return",
+    question: "What does isNaN() return?",
     answers: ["boolean", "string", "number", "array"],
     correctAnswer: 0
 },
