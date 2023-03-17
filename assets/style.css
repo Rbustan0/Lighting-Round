@@ -12,13 +12,14 @@ header {
 
  #view {
     text-align: left;
+    justify-content: center;
 }
 
-#view:hover {
-    
+ #view:hover {
+
     text-decoration: underline;
         color: red;
-}
+} 
 
 /* Stylized basic settings googled some themes that work with the background I wanted */
 
