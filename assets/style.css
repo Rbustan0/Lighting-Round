@@ -6,12 +6,18 @@ header {
     padding: 20px;
 }
 
-header #time {
+ #time {
     text-align: right;
 }
 
-header #view {
+ #view {
     text-align: left;
+}
+
+#view:hover {
+    
+    text-decoration: underline;
+        color: red;
 }
 
 /* Stylized basic settings googled some themes that work with the background I wanted */
