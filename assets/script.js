@@ -1,13 +1,13 @@
-var timeisLeft = 91; //need this outside so it can be called everywhere.
+
+//need this outside so it can be called everywhere.
+var timeisLeft = 91; 
 var timeEl = document.getElementById("time");
 var quizFinish = false;
 var questionIdx = 0;
- var tbody = document.getElementById('populate'); 
+
 
 
 // Making an array of objects for the buttons and prompts:
-
-
 var questions = [{
     question: "What does HTML stand for?",
     answers: ["HyperText Markup Language", "Hyper Text Marking Language", "Attention-deficit/hyperactivity disorder", "Cannabidiol"],
@@ -59,8 +59,11 @@ function startQuiz() {
 
     timeisLeft = 91; //need to reset incase user is calling the function again
     quizFinish = false; // need to reset this as it restarts function
-    questionIdx = 0;
-    displayQuestion();
+    questionIdx = 0; //starts index for shifting around questions
+    displayQuestion(); //Order doesnt matter whether it goes after or before timer, there is still a slight delay 
+
+
+// Starts timer for quiz
 
     var timah = setInterval(function () {
         timeisLeft--;
@@ -109,7 +112,6 @@ function displayQuestion() {
         answer4.innerText = currentQuestion.answers[3];
 
         //Assign the correct answer to the button with class
-        // Note using switch is a lot cleaner here than a loop
 
         var correctButton;
         switch (currentQuestion.correctAnswer) {
@@ -134,6 +136,7 @@ function displayQuestion() {
         correctButton.classList.remove("incorrect");
         correctButton.classList.add("correct");
 
+        //adds the possibility of accessing this function within runQuiz();
         answer1.addEventListener("click", checkAnswer);
         answer2.addEventListener("click", checkAnswer);
         answer3.addEventListener("click", checkAnswer);
@@ -160,7 +163,7 @@ function displayQuestion() {
             correctButton.classList.add("correct");
             document.getElementById("wrong").classList.remove("hidden");
             document.getElementById("right").classList.add("hidden");
-
+            // Penalty for choosing wrong answer
             timeisLeft -= 10;
         }
         // Disable all answer buttons
@@ -169,12 +172,15 @@ function displayQuestion() {
         answer3.disabled = true;
         answer4.disabled = true;
 
-        // Hide the feedback messages after 1.5 seconds
+        // Hide the feedback messages after .5 seconds
         setTimeout(function () {
+            // resets everything yet again and hides buttons
             document.getElementById("wrong").classList.remove("visible");
             document.getElementById("wrong").classList.add("hidden");
             document.getElementById("right").classList.remove("visible");
             document.getElementById("right").classList.add("hidden");
+            
+            // disables buttons and moves index up until the index hits 6.
             answer1.disabled = false;
             answer2.disabled = false;
             answer3.disabled = false;
@@ -200,6 +206,8 @@ function displayQuestion() {
 
 
 function displayFinish() {
+
+
     // Grab the necessary elements
     var takeScore = document.getElementById('take-score');
     var quiz = document.getElementById('quiz-Portion');
@@ -290,6 +298,7 @@ function displayHighscore() {
 
 function deleteHighscore() {
 
+    // grabs the body and removes each child.
     var tbody = document.getElementById('populate'); //table to be populated
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
@@ -299,23 +308,25 @@ function deleteHighscore() {
 
 //content i need outside in order to make other calls.
 
+
+
+
+// starts quiz on landing page
 const startButton = document.getElementById("start");
 startButton.addEventListener("click", startQuiz);
 
-
+// goes straight to highscore
 const viewHighScore = document.getElementById('view');
 viewHighScore.addEventListener("click", displayHighscore);
 
 
 
-
+// removes scores in local storage and runs the function that physically removes tables at highscore page.
 const reset = document.getElementById('reset-score');
 reset.addEventListener("click", function () {
    deleteHighscore();
    localStorage.removeItem('scores');
 });
-
-
 
 
 
