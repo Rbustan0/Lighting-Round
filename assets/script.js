@@ -44,9 +44,12 @@ var questions = [{
 
 function startQuiz() {
     // Selecting sections, changing Classes for visibility purposes
-
+    var viewscore = document.getElementById('view');
     var changeMain = document.querySelector('main');
     var quiz = document.getElementById('quiz-Portion');
+
+    viewscore.classList.remove('visible');
+    viewscore.classList.add('hidden');
 
     changeMain.classList.remove('visible');
     changeMain.classList.add('hidden');
@@ -300,6 +303,9 @@ const startButton = document.getElementById("start");
 startButton.addEventListener("click", startQuiz);
 
 
+const viewHighScore = document.getElementById('view');
+viewHighScore.addEventListener("click", displayHighscore);
+
 
 
 const scoreTable = document.getElementById('score-table');
@@ -315,8 +321,14 @@ reset.addEventListener("click", function () {
 
 
 // restarts and calls other functions again.
-const restart = document.getElementById('retake-quiz');
+const restart = document.getElementById('retake');
 restart.addEventListener("click", function () {
+
+    
+    // Need this back at start page
+    var viewscore = document.getElementById('view');
+    viewscore.classList.remove('visible');
+    viewscore.classList.add('hidden');
 
     location.reload();
 
@@ -328,11 +340,3 @@ restart.addEventListener("click", function () {
 
 
 
-// WHAT I NEED RIGHT NOW:
-
-// 3) show and save that info.
-// 4) in html/css: create a button to restart the quiz
-//      (a) call back and rerun program.
-// 4) in html/css: Add a link that calls highscores.
-//      (a) calls end immediately. (WILL need ot modify the call function for call highscore)
-//  5) restart button.
