@@ -2,8 +2,7 @@ var timeisLeft = 91; //need this outside so it can be called everywhere.
 var timeEl = document.getElementById("time");
 var quizFinish = false;
 var questionIdx = 0;
-
-var tbody = document.getElementById('populate'); //table to be populated
+ var tbody = document.getElementById('populate'); 
 
 
 // Making an array of objects for the buttons and prompts:
@@ -232,7 +231,7 @@ function displayFinish() {
 
         // Get the scores array from local storage
         
-           var scoresArray = JSON.parse(localStorage.getItem(scores)) || [];
+         var scoresArray = JSON.parse(localStorage.getItem('scores')) || [];
             scoresArray.push({ name: initial, score: timeisLeft });
             localStorage.setItem('scores', JSON.stringify(scoresArray));
           
@@ -270,6 +269,7 @@ function displayHighscore() {
 
 
     // Clear the table body and repopulate it with the updated scores
+    var tbody = document.getElementById('populate'); //table to be populated
     tbody.innerHTML = '';
     for (var i = 0; i < scoresArray.length; i++) {
         var tr = document.createElement('tr');
@@ -282,6 +282,23 @@ function displayHighscore() {
         tbody.appendChild(tr);
     }
 
+}
+
+
+function deleteHighscore() {
+
+    var tbody = document.getElementById('populate'); //table to be populated
+    var storedString = localStorage.getItem(scores);
+    for (var i = 0; i < storedString.length; i++) {
+        var tr = document.createElement('tr');
+        var tdName = document.createElement('td');
+        var tdScore = document.createElement('td');
+        tdName.innerText = localStorage[i].name;
+        tdScore.innerText = localStorage[i].score;
+        tr.removeChild(tdName);
+        tr.removeChild(tdScore);
+        tbody.removeChild(tr);
+    }  
 }
 
 
@@ -301,10 +318,7 @@ const scoreTable = document.getElementById('score-table');
 
 const reset = document.getElementById('reset-score');
 reset.addEventListener("click", function () {
-    var storage = localStorage.getItem('scores');
-    storage = [];
-    localStorage.setItem('scores', storage);
-    displayHighscore();
+   
 })
 
 
