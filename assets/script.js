@@ -222,21 +222,21 @@ function displayFinish() {
 
         var initial = initialInputs.value.trim();
 
-        if (initial !== '' || initial !== undefined) {
-            localStorage.setItem('initials', initial)
-        }
+        if (initial !== '' && initial !== null) {
+
+        localStorage.setItem('initials', initial);
+        
 
         // Save the score to local storage
-        localStorage.setItem('score', timeisLeft);
+        var scores = localStorage.setItem('score', timeisLeft);
 
         // Get the scores array from local storage
-       var scoresArray = (JSON.parse(localStorage.getItem('scores')) || []);
-
-       
-
-        scoresArray.push({ name: initial, score: timeisLeft });
-
-        localStorage.setItem('scores', JSON.stringify(scoresArray));
+        
+           var scoresArray = JSON.parse(localStorage.getItem(scores)) || [];
+            scoresArray.push({ name: initial, score: timeisLeft });
+            localStorage.setItem('scores', JSON.stringify(scoresArray));
+          
+        }
 
         // Display the high scores table
         displayHighscore();
